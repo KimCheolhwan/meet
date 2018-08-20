@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Login
+    link(rel="stylesheet" type="text/css" href="/stylesheets/main.css")
+  body
+    div(id='container')
+      label(for='name' class='col-lg-2 control-label')
+        a(href='/') 초기화면
+
+      form(action='/test/signup' method='post')
+        label =============회원가입==============
+        label(for='name' class='col-lg-2 control-label') 사용자 계정
+        input(type='text' name='email' placeholder='Sender Account')
+
+        label(for='name' class='col-lg-2 control-label') 비밀번호
+        input(type='password' name='password' placeholder='Amount (ETH)')
+
+        label(for='name' class='col-lg-2 control-label') 닉네임
+        input(type='text' name='nickname' placeholder='passphase')
+        button(id='button' onClick="loader.style.display='block';submit();") 회원가입
+
+      form(action='/test/tokenCheck' method='post')
+        label  ==============이더 및 토큰조회===============
+        label(for='name' class='col-lg-2 control-label') 계좌(주소)
+        input(type='text' name='address' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 토큰조회
+
+      form(action='/test/Ether_To_Token' method='post')
+        label  ==============Ether_To_Token===============
+        label(for='name' class='col-lg-2 control-label') 계좌(주소)
+        input(type='text' name='address' placeholder='Sender Account')
+        label(for='name' class='col-lg-2 control-label') 패스워드
+        input(type='text' name='password' placeholder='Sender Account')
+        label(for='name' class='col-lg-2 control-label') 이더량
+        input(type='text' name='value' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 토큰교환
+
+      form(action='/test/Token_To_Ether' method='post')
+        label  ==============Token_To_Ether===============
+        label(for='name' class='col-lg-2 control-label') 계좌(주소)
+        input(type='text' name='address' placeholder='Sender Account')
+        label(for='name' class='col-lg-2 control-label') 패스워드
+        input(type='text' name='password' placeholder='Sender Account')
+        label(for='name' class='col-lg-2 control-label') 토큰량
+        input(type='text' name='value' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 이더교환
+
+      form(action='/test/meetCreate' method='post')
+        label  ==============미팅생성===============
+        label(for='name' class='col-lg-2 control-label') 계좌(주소)
+        input(type='text' name='address' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 미팅생성
+
+      form(action='/test/meetJoin' method='post')
+        label  ==============미팅조인===============
+        label(for='name' class='col-lg-2 control-label') 계좌(주소)
+        input(type='text' name='address' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 미팅조인
+
+      form(action='/test/login' method='post')
+        label  ==============로그인===============
+        label(for='name' class='col-lg-2 control-label') 사용자 계정
+        input(type='text' name='email' placeholder='Sender Account')
+        button(id='button' onClick="loader.style.display='block';submit();") 로그인
