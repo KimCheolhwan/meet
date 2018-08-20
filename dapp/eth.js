@@ -6,8 +6,8 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://14.63.193.192:8545"));
 var Web3EthPersonal = require('web3-eth-personal');
 var personal = new Web3EthPersonal('http://14.63.193.192:8545');
-const TokenContractAddress = "0x8b5562b229e6bd1a5c1f81fa0b605c996b2c1648";
-const MeetContractAddress = "0xee90893a624286a27f25c73895abce1c85c2a1b7";
+const TokenContractAddress = "0x834921b29b2c105eca261c0595ace74e33513cd4";
+const MeetContractAddress = "0x91a9b847cf6dcc787fb387b5a1efcf078410fc46";
 
 
 var MeetTokenAbi =[
@@ -171,7 +171,7 @@ var MeetTokenAbi =[
 		"name": "Transfer",
 		"type": "event"
 	}
-]
+];
 var TokenContract = web3.eth.contract(MeetTokenAbi).at(TokenContractAddress);
 
 var MeetAbi =[
@@ -205,11 +205,79 @@ var MeetAbi =[
 				"type": "uint256"
 			}
 		],
-		"name": "participate",
+		"name": "Participate",
 		"outputs": [],
 		"payable": true,
 		"stateMutability": "payable",
 		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "ether_To_Token",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "participate",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "sign_up",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "token_To_Ether",
+		"type": "event"
 	},
 	{
 		"constant": false,
